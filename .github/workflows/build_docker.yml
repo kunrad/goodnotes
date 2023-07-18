@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@v2.5.0
 
     - name: Build and publish to Github using git-tag
-      uses: pmorelli92/github-container-registry-build-push@2.0.0
+      uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.TOKEN }}
         image-name: TEST
