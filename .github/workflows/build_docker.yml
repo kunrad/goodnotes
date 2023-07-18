@@ -16,7 +16,7 @@ jobs:
     - name: Build and publish to Github using git-tag
       uses: pmorelli92/github-container-registry-build-push@2.0.0
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.TOKEN }}
         image-name: TEST
         extract-git-tag: true
         dockerfile: Dockerfile
