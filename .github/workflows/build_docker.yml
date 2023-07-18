@@ -18,5 +18,5 @@ jobs:
       with:
         github-token: ${{ secrets.TOKEN }}
         image-name: TEST
-        extract-git-tag: true
+        image-tag: latest
         dockerfile: Dockerfile
