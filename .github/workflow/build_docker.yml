@@ -1,8 +1,22 @@
-jobs:
-  build-svc:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Checkout repository
+name: Build and Publish Github Packages
 
-      - name:
+on:
+  push:
+     branches:
+        - main
+        - dev
+
+jobs:
+  build-and-publish-head:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.5.0
+
+    - name: Build and publish to Github using git-tag
+      uses: kunrad/goodnotes_template/.github/workflows/docker@1.0.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        image-name: TEST
+        extract-git-tag: true
+        dockerfile: Dockerfile
