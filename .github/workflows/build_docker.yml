@@ -7,7 +7,6 @@ on:
         - dev
 
 jobs:
-  -
   build-and-publish-head:
     runs-on: ubuntu-latest
 
