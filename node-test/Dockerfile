@@ -1,15 +1,16 @@
-FROM node:20-alpine
+FROM node:18-alpine
 
 WORKDIR /app
 
+# Copy package files and install everything (including dev deps for testing)
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
-COPY index.js .
+# Copy the rest of the application code
+COPY . .
 
+# Expose port
 EXPOSE 3000
 
-USER node
-
+# Start the app
 CMD ["node", "index.js"]
-#test
